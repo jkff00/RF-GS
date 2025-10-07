@@ -2,18 +2,24 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Video Demo</title>
+    <title>Renderability Evaluation Demo</title>
     <style>
       body {
         background: #111;
         color: white;
         text-align: center;
-        font-family: sans-serif;
+        font-family: "Segoe UI", sans-serif;
+        line-height: 1.6;
+        padding: 20px;
+      }
+      h1, h2 {
+        color: #00e0ff;
       }
       video {
         width: 80%;
-        margin-top: 40px;
+        margin-top: 30px;
         border-radius: 10px;
+        box-shadow: 0 0 20px rgba(0,0,0,0.4);
       }
       img {
         margin-top: 40px;
@@ -21,10 +27,16 @@
         border-radius: 8px;
         box-shadow: 0 0 10px rgba(255,255,255,0.3);
       }
+      .content {
+        max-width: 900px;
+        margin: 0 auto;
+        text-align: left;
+      }
     </style>
   </head>
   <body>
-    <h1>Demo Video</h1>
+    <h1>Renderability Evaluation Demo</h1>
+
     <video controls>
       <source src="https://github.com/jkff00/RF-GS/releases/download/v1.0/10.7.mp4" type="video/mp4">
       Your browser does not support the video tag.
@@ -33,6 +45,26 @@
     <h2>Metric Visualization</h2>
     <img src="images/metric.png" alt="Metric visualization">
 
+    <div class="content">
+      <h2>Progress Update</h2>
+      <p>🔗 <a href="https://jkff00.github.io/RF-GS/" style="color:#00e0ff;">Demo page</a></p>
+      <ul>
+        <li>The renderability module now supports <b>incremental computation</b>, enabling <b>real-time updates</b> suitable for <b>active reconstruction tasks</b>.</li>
+        <li>Updating the renderability for <b>a single 1600×1080 image</b> takes only <b>8 ms</b>, while computing it for <b>a given pose (specific camera viewpoint)</b> requires about <b>17 ms</b>.</li>
+        <li>A <b>preliminary experiment</b> was conducted to evaluate both the <b>real-time performance</b> and the <b>reliability</b> of the metric.</li>
+        <ul>
+          <li>The demonstration video shows how the renderability value changes along the roaming trajectory, reflecting consistency with visual perception.</li>
+          <li>In a simulated environment, random viewpoint sampling was performed to compare our metric with three standard visual quality indicators. The results show that its distribution is <b>highly consistent with SSIM</b>, even without training any Gaussian Splatting model.</li>
+        </ul>
+      </ul>
+
+      <h3>Summary</h3>
+      <p>
+        These results demonstrate that the proposed renderability formulation is both <b>efficient</b> and 
+        <b>perceptually consistent</b>, providing a practical foundation for 
+        <b>real-time active view evaluation</b> and <b>active reconstruction</b>.
+      </p>
+    </div>
   </body>
 </html>
 
