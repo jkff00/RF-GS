@@ -1,2 +1,2 @@
 # RF-GS
-Renderability-field Forced Active Reconstruction
+Renderability-field Guided Active Reconstruction
